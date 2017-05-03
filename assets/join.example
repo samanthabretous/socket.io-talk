@@ -1,0 +1,6 @@
+socket.join(room);
+
+socket.once('disconnect', () => {
+  socket.leave();
+  socket.disconnect();
+});

@@ -1,0 +1,21 @@
+const path = require('path');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+
+// allow access to the req object that is sent over
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// server up the bundle file
+app.use(express.static(path.join(__dirname, '../client/', 'public')));
+// catch all routes to let react router handle routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client', '/index.html'));
+})
+
+server.listen(4000, () => {
+  console.log('break_up_with_your_ex_in_real_time is running on port 4000');
+});

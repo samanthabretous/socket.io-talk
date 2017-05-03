@@ -1,0 +1,3 @@
+socket.emit('only-send-message-to-myself', 'Im lonely');
+io.emit('send-message-to-everyone', { message: 'party at my place' });
+io.sockets.emit('send-message-to-everyone', { message: 'party at my place' });

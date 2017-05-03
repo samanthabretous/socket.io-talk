@@ -1,0 +1,21 @@
+module.exports = (app, io) => {
+
+  io.sockets.on('connection', (socket) => {
+    console.log('client connect');
+
+    app.post('/join-room', (req, res) => {
+      const { room, username } = req.body;
+      // place user in a room.
+      // users can be in multiple rooms at once
+      socket.join(room);
+      // broadcast === sends out a message to all user except for the newly joined user.
+      // in === interchangable with `to` sends messages to only users with in the room.
+      socket.broadcast.in(room).emit('message', { username })
+      res.send();
+    });
+
+    socket.on('/add-message', ({ newMessage, room }) => {
+      io.sockets.in(room).emit('message', { message: newMessage, room });
+    });
+  });
+};

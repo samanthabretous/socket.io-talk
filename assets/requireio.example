@@ -1,0 +1,9 @@
+// set up external file for socket
+require('./io')(app, io);
+
+...
+
+// catch all routes to let react router handle routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client', '/index.html'));
+})

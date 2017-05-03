@@ -1,0 +1,11 @@
+// sending to all clients in room(channel), include sender
+io.in('game').emit('message', 'cool game');
+
+// then simply use to or in (they are the same) when broadcasting or emitting (server-side)
+io.to('some room').emit('some event'):
+
+// sending to sender client, only if they are in 'game' room(channel)
+socket.to('game').emit('message', 'enjoy the game');
+
+// sending to all clients in 'game' room(channel) except sender
+socket.broadcast.to('game').emit('message', 'nice game');

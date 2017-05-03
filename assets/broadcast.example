@@ -1,0 +1,1 @@
+socket.broadcast.emit('plead-for-help', "is anyone out there");
