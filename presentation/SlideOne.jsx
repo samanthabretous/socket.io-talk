@@ -62,12 +62,7 @@ export default class Presentation extends React.Component {
 
 
 
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={3} textColor="primary" caps>Samantha Bretous</Heading>
-          <ListItem>Github</ListItem>
-          <ListItem>Twitter</ListItem>
-          <ListItem>Linkedin</ListItem>
-        </Slide>
+
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
             <Quote>If you dont know what to build it in, use JavaScript</Quote>
@@ -75,6 +70,8 @@ export default class Presentation extends React.Component {
             <Appear><Image src={images.curtis} /></Appear>
           </BlockQuote>
         </Slide>
+
+
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>How might you use sockets?</Heading>
           <List>
@@ -83,34 +80,8 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Make a chat app so you can Break up with your ex</ListItem></Appear>
           </List>
         </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={3} textColor="secondary" caps>How to Start</Heading>
-          <Heading size={6} textColor="secondary" caps>Yarn init -y && Yarn Add</Heading>
-          <List>
-            <ListItem>Socket.io</ListItem>
-            <ListItem>Socket.io-Client</ListItem>
-            <ListItem>Express</ListItem>
-            <ListItem>React</ListItem>
-            <ListItem>Axios</ListItem>
-            <ListItem>Babel/ Webpack</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Image height={700} src={images.folder}/>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Image height={700} src={images.folder2}/>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Image height={700} src={images.docs}/>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/server.example")}
-            margin="20px auto"
-          />
-        </Slide>
+
+
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Image height={700} src={images.docs}/>
         </Slide>
@@ -185,20 +156,7 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
         </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="tertiary">
-          <Heading size={3} textColor="tertiary">Server Side</Heading>
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/appAndSocket.example")}
-            margin="20px auto"
-          />
-          <Heading size={3} textColor="tertiary">Server Side</Heading>
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/in.example")}
-            margin="20px auto"
-          />
-        </Slide>
+
 
       </Deck>
     );
