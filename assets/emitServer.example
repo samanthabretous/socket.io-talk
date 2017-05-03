@@ -1,0 +1,7 @@
+io.sockets.on('connection', (socket) => {
+
+  socket.on('add-message', ({ newMessage, username, room }) => {
+    io.sockets.in(room).emit('message', { message: newMessage, username});
+  });
+  
+});

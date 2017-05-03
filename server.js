@@ -25,7 +25,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 
-server.listen(serverPort, "localhost", function (err) {
+server.listen(process.env.PORT || 3000, "localhost", function (err) {
   if (err) {
     console.log(err);
     return;

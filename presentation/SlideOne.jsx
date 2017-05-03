@@ -60,7 +60,94 @@ export default class Presentation extends React.Component {
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
 
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size={3} textColor="orange" caps> AJAX</Heading>
+          <Layout>
+            <Fill>
+              <article>
+                <Text textColor="pink">CLIENT</Text>
+                <Image width={200} src={images.ex} />
+                <Text textColor="blue" lineHeight={3}>EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="pink">SEND GET REQUEST</Text>
+                <Image width={200} src={images.phone} />
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="pink">SERVER</Text>
+                <Image width={200} src={images.friend} />
+                <Text textColor="blue">FRIEND</Text>
+              </article>
+            </Fill>
+          </Layout>
+        </Slide>
 
+        <Slide transition={["fade"]} bgColor="orange" textColor="gray">
+          <Heading size={1} textColor="tertiary">ROOM</Heading>
+          <Text textColor="tertiary">channels that socket users can join or leave.</Text>
+          <CodePane
+            lang="javascript"
+            source={require("raw-loader!../assets/join.example")}
+            margin="20px auto"
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="pink" textColor="white" notes="waste networking and resources">
+          <Heading size={3} textColor="white">AJAX</Heading>
+          <Layout>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Appear>
+                <article>
+                  <Text textColor="orange">SERVER</Text>
+                  <Image width={150} src={images.friend} />
+                  <Text textColor="blue">FRIEND</Text>
+                </article>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear>
+                <div>
+                  <Heading textColor="pink" size={4}>Line Spacing</Heading>
+                  <Heading textColor="white" size={5}>She doesn't want y'all</Heading>
+                </div>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
 
 
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
@@ -81,10 +168,32 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Image height={700} src={images.docs}/>
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size={3} textColor="orange" caps>SOCKET vs AJAX</Heading>
+          <Layout>
+            <Fill>
+              <article>
+                <Text textColor="pink">CLIENT</Text>
+                <Image width={200} src={images.ex} />
+                <Text textColor="blue" lineHeight={3}>EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="pink">SEND GET REQUEST</Text>
+                <Image width={200} src={images.phone} />
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="pink">SERVER</Text>
+                <Image width={200} src={images.friend} />
+                <Text textColor="blue">FRIEND</Text>
+              </article>
+            </Fill>
+          </Layout>
         </Slide>
+
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <CodePane
             lang="javascript"

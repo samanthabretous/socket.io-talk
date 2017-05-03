@@ -41,12 +41,12 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  curtis: require("../assets/curtis_jackson.jpg"),
   ajax: require("../assets/ajax.png"),
   me: require("../assets/me.png"),
   friend: require("../assets/friend.png"),
   ex: require("../assets/ex.png"),
   phone: require("../assets/phone.png"),
+  money: require("../assets/money.gif"),
 };
 
 preloader(images);
@@ -64,7 +64,14 @@ const theme = createTheme({
 });
 
 export default class Presentation extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      messages: []
+    };
+  }
   render() {
+    console.log(this.state.messages);
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
 
@@ -100,39 +107,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size={3} textColor="orange" caps> AJAX</Heading>
-          <Layout>
-            <Fill>
-            <Appear>
-              <article>
-                <Text textColor="pink">CLIENT</Text>
-                <Image width={200} src={images.ex} />
-                <Text textColor="blue" lineHeight={3}>EX</Text>
-              </article>
-            </Appear>
-          </Fill>
-            <Fill>
-            <Appear>
-              <article>
-                <Text textColor="pink">SERVER</Text>
-                <Image width={200} src={images.friend} />
-                <Text textColor="blue">FRIEND</Text>
-              </article>
-            </Appear>
-          </Fill>
-            <Fill>
-            <Appear>
-              <article>
-                <Text textColor="pink">CLIENT</Text>
-                <Image width={200} src={images.me} />
-                <Text textColor="blue">ME</Text>
-              </article>
-            </Appear>
-          </Fill>
-          </Layout>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="white">
-          <Heading size={3} textColor="orange" caps> AJAX</Heading>
+          <Heading size={3} textColor="orange" caps>Socket vs AJAX</Heading>
           <Layout>
             <Fill>
               <article>
@@ -143,32 +118,10 @@ export default class Presentation extends React.Component {
             </Fill>
             <Fill>
               <article>
-                <Text textColor="pink">SEND GET REQUEST</Text>
-                <Image width={200} src={images.phone} />
-              </article>
-            </Fill>
-            <Fill>
-              <article>
                 <Text textColor="pink">SERVER</Text>
                 <Image width={200} src={images.friend} />
                 <Text textColor="blue">FRIEND</Text>
               </article>
-            </Fill>
-          </Layout>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="white">
-          <Heading size={3} textColor="orange" caps> AJAX</Heading>
-          <Layout>
-            <Fill>
-              <article>
-                <Text textColor="pink">SERVER</Text>
-                <Image width={200} src={images.friend} />
-                <Text textColor="blue">FRIEND</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <Text textColor="white">Line for spacing</Text>
-              <Text lineHeight={2} textColor="pink">POST REQUEST</Text>
             </Fill>
             <Fill>
               <article>
@@ -176,68 +129,10 @@ export default class Presentation extends React.Component {
                 <Image width={200} src={images.me} />
                 <Text textColor="blue">ME</Text>
               </article>
-            </Fill>
+          </Fill>
           </Layout>
         </Slide>
-        <Slide transition={["fade"]} bgColor="white">
-          <Heading size={3} textColor="orange" caps> AJAX</Heading>
-          <Layout>
-            <Fill>
-              <article>
-                <Text textColor="pink">CLIENT</Text>
-                <Image width={200} src={images.ex} />
-                <Text textColor="blue" lineHeight={3}>EX</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="pink">SEND GET REQUEST</Text>
-                <Image width={200} src={images.phone} />
-              </article>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="pink">SERVER</Text>
-                <Image width={200} src={images.friend} />
-                <Text textColor="blue">FRIEND</Text>
-              </article>
-            </Fill>
-          </Layout>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="white">
-          <Heading size={3} textColor="orange" caps>SOCKET.IO</Heading>
-          <Layout>
-            <Fill>
-              <article>
-                <Text textColor="pink">CLIENT</Text>
-                <Image width={200} src={images.me} />
-                <Text textColor="blue">ME</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <Text textColor="white">Line for spacing</Text>
-              <Text lineHeight={2} textColor="pink">EMIT</Text>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="pink">SERVER</Text>
-                <Image width={200} src={images.friend} />
-                <Text textColor="blue">FRIEND</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <Text textColor="white">Line for spacing</Text>
-              <Text lineHeight={2} textColor="pink">EMIT</Text>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="pink">CLIENT</Text>
-                <Image width={200} src={images.ex} />
-                <Text lineHeight={3} textColor="blue">EX</Text>
-              </article>
-            </Fill>
-          </Layout>
-        </Slide>
+
         <Slide transition={["spin"]} bgColor="gray">
           <Heading size={3} textColor="white">@samanthabretous</Heading>
           <Text textColor="blue">Github</Text>
@@ -252,6 +147,7 @@ export default class Presentation extends React.Component {
             <Heading size={4} textColor="gray">SOCKET.IO-CLIENT</Heading >
           </div>
         </Slide>
+
         <Slide transition={["zoom"]} bgColor="orange">
           <Heading size={2} textColor="gray">SOCKET.IO</Heading >
           <CodePane
@@ -260,6 +156,7 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
         </Slide>
+
         <Slide transition={["zoom"]} bgColor="orange">
           <Heading size={2} textColor="gray">SOCKET.IO-CLIENT</Heading >
           <CodePane
@@ -268,6 +165,23 @@ export default class Presentation extends React.Component {
             margin="20px auto"
           />
         </Slide>
+
+        <Slide transition={["fade"]} bgColor="orange" textColor="gray">
+          <Heading size={1} textColor="white">SEND and RECEIVE data</Heading>
+          <Text>Client</Text>
+          <CodePane
+            lang="javascript"
+            source={require("raw-loader!../assets/emitClient.example")}
+            margin="20px auto"
+          />
+          <Text>Server</Text>
+          <CodePane
+            lang="javascript"
+            source={require("raw-loader!../assets/emitServer.example")}
+            margin="20px auto"
+          />
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="orange">
           <Heading size={2} textColor="gray">SOCKET TERMS</Heading >
           <Heading size={4} textColor="white">ROOMS</Heading>
@@ -279,26 +193,92 @@ export default class Presentation extends React.Component {
           <Heading size={4} textColor="white">EMIT()</Heading>
           <Heading size={4} textColor="white">ON()</Heading>
         </Slide>
+
         <Slide transition={["fade"]} bgColor="orange" textColor="gray">
-          <Heading size={1} textColor="gray">EMIT() / ON()</Heading>
-          <Text textColor="gray">How to send and recieve messages. Used on the client or server side</Text>
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/emit.example")}
-            margin="20px auto"
-          />
+          <Chat messages={this.state.messages} parent={this}/>
         </Slide>
-        <Slide transition={["fade"]} bgColor="orange" textColor="gray">
-          <Chat />
+        <Slide transition={["fade"]} bgColor="pink">
+          <Heading size={3} textColor="black" caps>Is Ajax Dead?</Heading>
+          <Appear><Heading size={1} textColor="white">NO!!</Heading></Appear>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="pink">
+          <Heading size={3} textColor="white">Sockets are expensive</Heading>
+          <Image src={images.money} />
+          <Appear><Heading size={3} textColor="white">But so can AJAX polling.</Heading></Appear>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="pink" textColor="blue">
+          <Heading textColor="white" size={3}>Examples of where to use AJAX</Heading>
+          <Text>Form Validation</Text>
+          <Text>Comments</Text>
+          <Text>Filtering Data</Text>
+          <Text>Surveys</Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="pink" textColor="white" notes="waste networking and resources">
+          <Heading size={3} textColor="white">AJAX</Heading>
+          <Layout>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+            <Fill>
+              <article>
+                <Text textColor="orange">CLIENT</Text>
+                <Image width={150} src={images.ex} />
+                <Text textColor="blue">EX</Text>
+              </article>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Appear>
+                <article>
+                  <Text textColor="orange">SERVER</Text>
+                  <Image width={150} src={images.friend} />
+                  <Text textColor="blue">FRIEND</Text>
+                </article>
+              </Appear>
+            </Fill>
+            <Fill>
+              <Appear>
+                <div>
+                  <Heading textColor="pink" size={4}>Line Spacing</Heading>
+                  <Heading textColor="white" size={5}>She doesn't want y'all</Heading>
+                </div>
+              </Appear>
+            </Fill>
+          </Layout>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="pink" textColor="blue">
+          <Heading size={6} textColor="white" caps>How might you use sockets?</Heading>
+          <List>
+            <Appear><ListItem>Make a multiplayer game so you can dominate your friends</ListItem></Appear>
+            <Appear><ListItem>Create a sports feed so you can never miss out when Steph Curry scores</ListItem></Appear>
+            <Appear><ListItem>Send the current weather from your IOT moisture sensor</ListItem></Appear>
+            <Appear><ListItem>Make a chat app so you can Break up with your ex</ListItem></Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="orange">
+          <Heading size={1} textColor="white" caps>Thank you</Heading>
+          <Heading size={3} textColor="white" caps>@samanthabretous</Heading>
         </Slide>
       </Deck>
     );
   }
 };
-
-// <Slide transition={["fade"]} bgColor="orange">
-//   <Heading size={3} textColor="white" caps>ajax</Heading>
-//   <Appear><Text textColor="blue">EX</Text><Image src={images.ex} /></Appear>
-//   <Appear><Text textColor="blue">SERVER</Text><Image src={images.friend} /></Appear>
-//   <Appear><Text textColor="blue">MEe</Text><Image src={images.me} /></Appear>
-// </Slide>

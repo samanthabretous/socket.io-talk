@@ -1,0 +1,5 @@
+socket.emit("add-message", {
+  newMessage: this.state.messageInput,
+  username: this.state.username,
+  room: this.state.room
+});

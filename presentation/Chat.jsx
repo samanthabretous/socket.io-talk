@@ -5,7 +5,6 @@ class ChatRoom extends React.Component {
   constructor() {
     super();
     this.state = {
-      messages: [],
       messageInput: "",
       username: ""
     };
@@ -35,7 +34,7 @@ class ChatRoom extends React.Component {
     return (
       <main>
         <section>
-          {this.state.messages.map((message, index) => (
+          {this.props.messages.map((message, index) => (
             <article key={index}>
               <p><span style={{ color: "white", fontWeight: "bold" }}>{message.username} </span>
                 {message.message

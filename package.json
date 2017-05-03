@@ -8,7 +8,12 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && surge -p .",
-    "start": "cross-env NODE_ENV=development node server.js"
+    "start": "cross-env NODE_ENV=development node server.js",
+    "heroku-postbuild": "yarn build"
+  },
+  "engines": {
+    "node": "7.4.0",
+    "npm": "4.3.0"
   },
   "author": "",
   "license": "MIT",
@@ -18,7 +23,8 @@
     "react-dom": "15.4.2",
     "socket.io": "^1.7.3",
     "socket.io-client": "^1.7.3",
-    "spectacle": "^2.0.0"
+    "spectacle": "^2.0.0",
+    "spectacle-code-slide": "^0.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
