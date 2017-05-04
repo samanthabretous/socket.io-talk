@@ -71,7 +71,6 @@ export default class Presentation extends React.Component {
     };
   }
   render() {
-    console.log(this.state.messages);
     return (
       <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
 
@@ -182,89 +181,10 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="orange">
-          <Heading size={2} textColor="gray">SOCKET TERMS</Heading >
-          <Heading size={4} textColor="white">ROOMS</Heading>
-          <Heading size={4} textColor="white">JOIN()</Heading>
-          <Heading size={4} textColor="white">LEAVE()</Heading>
-          <Heading size={4} textColor="white">BROADCAST</Heading>
-          <Heading size={4} textColor="white">IO vs. IO.SOCKETS</Heading>
-          <Heading size={4} textColor="white">IN() vs TO()</Heading>
-          <Heading size={4} textColor="white">EMIT()</Heading>
-          <Heading size={4} textColor="white">ON()</Heading>
-        </Slide>
-
         <Slide transition={["fade"]} bgColor="orange" textColor="gray">
           <Chat messages={this.state.messages} parent={this}/>
         </Slide>
-        <Slide transition={["fade"]} bgColor="pink">
-          <Heading size={3} textColor="black" caps>Is Ajax Dead?</Heading>
-          <Appear><Heading size={1} textColor="white">NO!!</Heading></Appear>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="pink">
-          <Heading size={3} textColor="white">Sockets are expensive</Heading>
-          <Image src={images.money} />
-          <Appear><Heading size={3} textColor="white">But so can AJAX polling.</Heading></Appear>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="pink" textColor="blue">
-          <Heading textColor="white" size={3}>Examples of where to use AJAX</Heading>
-          <Text>Form Validation</Text>
-          <Text>Comments</Text>
-          <Text>Filtering Data</Text>
-          <Text>Surveys</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="pink" textColor="white" notes="waste networking and resources">
-          <Heading size={3} textColor="white">AJAX</Heading>
-          <Layout>
-            <Fill>
-              <article>
-                <Text textColor="orange">CLIENT</Text>
-                <Image width={150} src={images.ex} />
-                <Text textColor="blue">EX</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="orange">CLIENT</Text>
-                <Image width={150} src={images.ex} />
-                <Text textColor="blue">EX</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="orange">CLIENT</Text>
-                <Image width={150} src={images.ex} />
-                <Text textColor="blue">EX</Text>
-              </article>
-            </Fill>
-            <Fill>
-              <article>
-                <Text textColor="orange">CLIENT</Text>
-                <Image width={150} src={images.ex} />
-                <Text textColor="blue">EX</Text>
-              </article>
-            </Fill>
-          </Layout>
-          <Layout>
-            <Fill>
-              <Appear>
-                <article>
-                  <Text textColor="orange">SERVER</Text>
-                  <Image width={150} src={images.friend} />
-                  <Text textColor="blue">FRIEND</Text>
-                </article>
-              </Appear>
-            </Fill>
-            <Fill>
-              <Appear>
-                <div>
-                  <Heading textColor="pink" size={4}>Line Spacing</Heading>
-                  <Heading textColor="white" size={5}>She doesn't want y'all</Heading>
-                </div>
-              </Appear>
-            </Fill>
-          </Layout>
-        </Slide>
+
         <Slide transition={["fade"]} bgColor="pink" textColor="blue">
           <Heading size={6} textColor="white" caps>How might you use sockets?</Heading>
           <List>
@@ -274,6 +194,7 @@ export default class Presentation extends React.Component {
             <Appear><ListItem>Make a chat app so you can Break up with your ex</ListItem></Appear>
           </List>
         </Slide>
+
         <Slide transition={["fade"]} bgColor="orange">
           <Heading size={1} textColor="white" caps>Thank you</Heading>
           <Heading size={3} textColor="white" caps>@samanthabretous</Heading>

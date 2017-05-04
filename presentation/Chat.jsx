@@ -6,7 +6,8 @@ class ChatRoom extends React.Component {
     super();
     this.state = {
       messageInput: "",
-      username: ""
+      username: "",
+      messages: []
     };
     this.sendMessage = this.sendMessage.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -34,9 +35,9 @@ class ChatRoom extends React.Component {
     return (
       <main>
         <section>
-          {this.props.messages.map((message, index) => (
+          {this.state.messages.map((message, index) => (
             <article key={index}>
-              <p><span style={{ color: "white", fontWeight: "bold" }}>{message.username} </span>
+              <p><span style={{ color: "white", fontWeight: "bold" }}>{message.username && message.username} </span>
                 {message.message
                   ? message.message
                   : "has join chat."
