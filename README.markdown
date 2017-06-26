@@ -1,6 +1,6 @@
-Breaking Up with Your Ex in Realtime: Getting Started with Socket.io Slides
+Breaking Up with Your Ex in Real-time: Getting Started with Socket.io Slides
 
-Learn how to uses web sockets. A fun take on the difference between AJAX polling and sockets with a methaphor of getting rid of your ex.
+Learn how to uses web sockets. A fun take on the difference between AJAX polling and sockets with a metaphor of getting rid of your ex.
 
 Talks/Workshops
 

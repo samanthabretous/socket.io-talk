@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && surge -p .",
     "start": "cross-env NODE_ENV=development node server.js",
-    "heroku-postbuild": "yarn deploy"
+    "heroku-postbuild": "npm run clean & npm build"
   },
   "engines": {
     "node": "7.4.0",
